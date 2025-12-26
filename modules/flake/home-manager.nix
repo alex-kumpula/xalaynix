@@ -16,6 +16,7 @@
       pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
 
       modules = [
+        ./home.nix
       ];
     };
   };
