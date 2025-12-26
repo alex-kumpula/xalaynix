@@ -9,47 +9,10 @@
     inputs.home-manager.flakeModules.home-manager
   ];
 
-
-  flake.homeConfigurations = {
-    # FIXME - DONE replace with your username@hostname
-    "alex" = inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-
-      modules = [
-        ./home.nix
-      ];
-    };
-  };
-
-
-  flake.homeConfigurations.jrs = inputs.home-manager.lib.homeManagerConfiguration {
-    pkgs = import inputs.nixpkgs {
-      system = "x86_64-linux";
-      config = {
-        allowUnfree = true;
-      };
-    };
-
-    modules = with config.flake.modules.homeManager; [
-      alex
-    ];
-  };
-
-  # homeConfigurations = {
-  #     # FIXME - DONE replace with your username@hostname
-  #     "alex" = home-manager.lib.homeManagerConfiguration {
-  #       pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-  #       extraSpecialArgs = mySpecialArgs;
-  #       modules = [
-  #         # > Our main home-manager configuration file <
-  #         ./homes/alex/home.nix
-  #         {
-  #           home.packages = [affinity-nix.packages.x86_64-linux.v3];
-  #         }
-  #       ];
-  #     };
-  #   };
-
+  # Maybe need the below nix code? 
+  # Was in https://github.com/GaetanLepage/nix-config/blob/c97af82e25d96d720d9871c4d31d1479a7d3667e/modules/flake/home-manager.nix
+  # But I don't know if it is really needed.
+  # Leaving this note here just in case.
 
   # Required to define `homeConfigurations` in multiple files.
   # Otherwise:
