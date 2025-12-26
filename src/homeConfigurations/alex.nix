@@ -30,8 +30,11 @@
     # Enable home-manager to install and manage itself
     programs.home-manager.enable = true;
 
-    # Enable Firefox
+    # Some example packages
     programs.firefox.enable = true;
+    home.packages = with pkgs; [
+      godot
+    ];
 
     # Nicely reload system units when changing configs
     systemd.user.startServices = "sd-switch";
