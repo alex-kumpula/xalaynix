@@ -20,6 +20,16 @@
     };
   };
 
+  homeConfigurations = {
+      # FIXME - DONE replace with your username@hostname
+      "alex2" = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        modules = [
+
+        ];
+      };
+    };
+
   # homeConfigurations = {
   #     # FIXME - DONE replace with your username@hostname
   #     "alex" = home-manager.lib.homeManagerConfiguration {
