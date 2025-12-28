@@ -6,7 +6,9 @@
       vm-configuration 
       vm-hardware-configuration 
     ] ++ [
-      ./_disko.nix
+      (import ./_disko.nix {
+        device = "/dev/vda";
+      })
     ];
   };
 }
