@@ -71,6 +71,7 @@
     users.users.alex = {
       isNormalUser = true;
       description = "Alex Kumpula";
+      initialPassword = "changeme";
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
       #  thunderbird
