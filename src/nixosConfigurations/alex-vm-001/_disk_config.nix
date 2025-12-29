@@ -34,11 +34,11 @@ in
   #   options = [ "subvol=root" ];
   # };
 
-  fileSystems."/persistent" = {
+  fileSystems."/persist" = {
     # device = "/dev/root_vg/root";
     neededForBoot = true;
     # fsType = "btrfs";
-    # options = [ "subvol=persistent" ];
+    # options = [ "subvol=persist" ];
   };
 
   # fileSystems."/nix" = {
