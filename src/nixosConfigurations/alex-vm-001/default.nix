@@ -6,6 +6,8 @@
       ./_disk_config.nix
       vm-configuration 
       vm-hardware-configuration
+    ] ++ [
+      inputs.disko.nixosModules.default
     ];
   };
 }
