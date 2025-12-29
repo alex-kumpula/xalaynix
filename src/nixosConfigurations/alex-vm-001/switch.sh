@@ -1,1 +1,1 @@
-sudo nixos-rebuild switch --flake github:alex-kumpula/xalaynix#alex-vm-001
+sudo nixos-rebuild switch --flake github:alex-kumpula/xalaynix#alex-vm-001 --refresh
