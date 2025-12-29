@@ -45,7 +45,7 @@ in
       umount /btrfs_tmp
     '';
   };
-  
+
   # boot.initrd.postResumeCommands = lib.mkAfter ''
   #   mkdir /btrfs_tmp
   #   mount /dev/root_vg/root /btrfs_tmp
