@@ -1,12 +1,12 @@
 # ./modules/git.nix
 
-{ lib, ... }: 
+{ lib, config, ... }: 
 # No 'config' in the function signature needed here, as we defer its use
 # and let the inner NixOS module evaluation provide it.
 
 {
   # The Flake Parts export path
-  flake.modules.nixos.git = { 
+  modules.nixos.git = { 
     # This is the actual NixOS module set
 
     # 1. Define the options (Standard NixOS attribute)
