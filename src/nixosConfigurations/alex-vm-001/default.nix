@@ -8,7 +8,7 @@
       vm-configuration 
       vm-hardware-configuration
       git
-      alex-vm-001
+      hosts.alex-vm-001
     ] ++ [
       inputs.disko.nixosModules.default
       inputs.impermanence.nixosModules.impermanence
