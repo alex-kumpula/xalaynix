@@ -118,7 +118,7 @@ in
       "/home"
     ];
     files = [
-      # "/etc/machine-id"
+      "/etc/machine-id" # You may need to delete this file manually once to get it regenerated
       # "/var/lib/logrotate.status" # TODO: doesn't play nicely with the service yet
     ];
   };
