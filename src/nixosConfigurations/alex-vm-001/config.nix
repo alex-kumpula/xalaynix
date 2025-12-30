@@ -6,6 +6,8 @@
       ... 
     }: 
     {
-      programs.ssh.enable = true;
+      config = {
+        networking.hostName = "alex-vm-001";
+      };
   };
 }
