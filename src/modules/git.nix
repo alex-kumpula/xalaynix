@@ -1,11 +1,13 @@
-# ./modules/git-simple.nix
-{ self, lib, ... }:  # flake-parts module
+{ self, lib, ... }:
 {
-  flake.modules.nixos.git = { 
-    config, lib, ... 
+  flake.modules.nixos.git = 
+    { 
+      config, 
+      lib, 
+      ... 
     }: 
     {
-      options.test123.git = {
+      options.xalaynix.git = {
         enable = lib.mkOption {
           type = lib.types.bool;
           default = true;
@@ -15,12 +17,8 @@
 
       config = {
         programs.git = {
-          enable = config.test123.git.enable;
+          enable = config.xalaynix.git.enable;
         };
       };
   };
-
-  # flake.modules.nixos.git = {
-  #   programs.git.enable = true;
-  # };
 }
