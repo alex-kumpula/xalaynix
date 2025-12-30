@@ -1,7 +1,6 @@
 { self, lib, ... }:
 {
-  flake.modules.nixos.git = 
-    { 
+  flake.modules.nixos.git = { 
       config, 
       lib, 
       ... 
