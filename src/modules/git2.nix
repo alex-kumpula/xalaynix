@@ -12,6 +12,12 @@
           description = "Enable simple git configuration.";
         };
       };
+
+      config = {
+        programs.git = {
+          lfs.enable = true;
+        };
+      };
   };
 
   # flake.modules.nixos.git = {
