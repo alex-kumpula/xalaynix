@@ -115,6 +115,7 @@ in
       "/var/lib/systemd/timers"
       "/var/lib/udisks2"
       "/var/log"
+      "/home"
     ];
     files = [
       # "/etc/machine-id"
@@ -122,13 +123,13 @@ in
     ];
   };
 
-  environment.persistence."/persistent/home" = {
-    enable = true;
-    hideMounts = true;
-    directories = [
-      "/home"
-    ];
-  };
+  # environment.persistence."/persistent/home" = {
+  #   enable = true;
+  #   hideMounts = true;
+  #   directories = [
+  #     "/home"
+  #   ];
+  # };
 
   disko.devices = {
     disk.main = {
