@@ -168,52 +168,52 @@ in
 
 #####
   
-  systemd.tmpfiles.rules = [
-    "d ${tempMountDir} 0755 root root"
-  ];
+  # systemd.tmpfiles.rules = [
+  #   "d ${tempMountDir} 0755 root root"
+  # ];
 
-  systemd.services.root-marker-snapshot = {
-    after = [ "local-fs.target" "network-online.target" ];
-    wantedBy = [ "multi-user.target" ];
-    requires = [ "local-fs.target" ]; 
+  # systemd.services.root-marker-snapshot = {
+  #   after = [ "local-fs.target" "network-online.target" ];
+  #   wantedBy = [ "multi-user.target" ];
+  #   requires = [ "local-fs.target" ]; 
 
-    unitConfig = {
-      # CRITICAL: Do not run if the system is resuming from hibernation.
-      ConditionKernelCommandLine = ["!resume="];
-    };
+  #   unitConfig = {
+  #     # CRITICAL: Do not run if the system is resuming from hibernation.
+  #     ConditionKernelCommandLine = ["!resume="];
+  #   };
     
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
-      User = "root";
-    };
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     RemainAfterExit = true;
+  #     User = "root";
+  #   };
 
-    script = ''
-      MARKER_NAME="root_post_boot_marker"
+  #   script = ''
+  #     MARKER_NAME="root_post_boot_marker"
       
-      # Using resolved paths from pkgs for reliability
-      MOUNT="${pkgs.util-linux}/bin/mount"
-      BTRFS="${pkgs.btrfs-progs}/bin/btrfs"
-      GREP="${pkgs.gnugrep}/bin/grep"
-      UMOUNT="${pkgs.util-linux}/bin/umount"
+  #     # Using resolved paths from pkgs for reliability
+  #     MOUNT="${pkgs.util-linux}/bin/mount"
+  #     BTRFS="${pkgs.btrfs-progs}/bin/btrfs"
+  #     GREP="${pkgs.gnugrep}/bin/grep"
+  #     UMOUNT="${pkgs.util-linux}/bin/umount"
       
-      # 1. Mount the main Btrfs volume
-      $MOUNT ${mainDevice} ${tempMountDir}
+  #     # 1. Mount the main Btrfs volume
+  #     $MOUNT ${mainDevice} ${tempMountDir}
       
-      # 2. Check if an existing marker snapshot exists and delete it
-      if $BTRFS subvolume list -o ${tempMountDir} | $GREP -q "/persistent/$MARKER_NAME$"; then
-        echo "Deleting old marker snapshot." >&2
-        $BTRFS subvolume delete ${tempMountDir}/persistent/$MARKER_NAME
-      fi
+  #     # 2. Check if an existing marker snapshot exists and delete it
+  #     if $BTRFS subvolume list -o ${tempMountDir} | $GREP -q "/persistent/$MARKER_NAME$"; then
+  #       echo "Deleting old marker snapshot." >&2
+  #       $BTRFS subvolume delete ${tempMountDir}/persistent/$MARKER_NAME
+  #     fi
 
-      # 3. Create a read-only snapshot of the *current* running root subvolume (/)
-      echo "Creating new marker snapshot: $MARKER_NAME" >&2
-      $BTRFS subvolume snapshot -r / ${tempMountDir}/persistent/$MARKER_NAME
+  #     # 3. Create a read-only snapshot of the *current* running root subvolume (/)
+  #     echo "Creating new marker snapshot: $MARKER_NAME" >&2
+  #     $BTRFS subvolume snapshot -r / ${tempMountDir}/persistent/$MARKER_NAME
       
-      # 4. Unmount the temporary volume mount
-      $UMOUNT ${tempMountDir}
-    '';
-  };
+  #     # 4. Unmount the temporary volume mount
+  #     $UMOUNT ${tempMountDir}
+  #   '';
+  # };
   
 #####
 
