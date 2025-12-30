@@ -55,6 +55,61 @@ let
   '';
 in
 {
+  
+
+  
+  # Explode / on every boot and resume, see https://grahamc.com/blog/erase-your-darlings/
+  boot.initrd.systemd = {
+    extraBin = {
+      grep = "${pkgs.gnugrep}/bin/grep";
+    };
+    services = {
+      root-explode = {
+        wantedBy = ["initrd-root-device.target"];
+        wants = ["lvm2-activation.service"];
+        # See https://github.com/nix-community/impermanence/issues/250#issuecomment-2603848867
+        after = ["lvm2-activation.service" "local-fs-pre.target"];
+        before = ["sysroot.mount"];
+        # Run on cold boot only, never on resume from hibernation
+        unitConfig = {
+          ConditionKernelCommandLine = ["!resume="];
+          RequiresMountsFor = ["/dev/mapper/root_vg-root"];
+        };
+        serviceConfig = {
+          StandardOutput = "journal+console";
+          StandardError = "journal+console";
+          Type = "oneshot";
+        };
+        script = rootExplosion;
+      };
+    };
+  };
+
+  boot.tmp.cleanOnBoot = true;
+
+  fileSystems."/persistent" = {
+    # device = "/dev/root_vg/root";
+    neededForBoot = true;
+    # fsType = "btrfs";
+    # options = [ "subvol=persist" ];
+  };
+
+  # environment.persistence."/persistent/system" = {
+  #   enable = true;
+  #   hideMounts = true;
+  #   directories = [
+  #     "/var/lib/nixos"
+  #     "/var/lib/systemd/coredump"
+  #     "/var/lib/systemd/timers"
+  #     "/var/lib/udisks2"
+  #     "/var/log"
+  #   ];
+  #   # files = [
+  #   #   "/etc/machine-id"
+  #   #   # "/var/lib/logrotate.status" # TODO: doesn't play nicely with the service yet
+  #   # ];
+  # };
+
   # boot.initrd.systemd.services.recreate-root = {
   #   description = "Rolling over and creating new filesystem root";
 
@@ -122,59 +177,6 @@ in
   #   btrfs subvolume create /btrfs_tmp/root
   #   umount /btrfs_tmp
   # '';
-
-  
-  # Explode / on every boot and resume, see https://grahamc.com/blog/erase-your-darlings/
-  boot.initrd.systemd = {
-    extraBin = {
-      grep = "${pkgs.gnugrep}/bin/grep";
-    };
-    services = {
-      root-explode = {
-        wantedBy = ["initrd-root-device.target"];
-        wants = ["lvm2-activation.service"];
-        # See https://github.com/nix-community/impermanence/issues/250#issuecomment-2603848867
-        after = ["lvm2-activation.service" "local-fs-pre.target"];
-        before = ["sysroot.mount"];
-        # Run on cold boot only, never on resume from hibernation
-        unitConfig = {
-          ConditionKernelCommandLine = ["!resume="];
-          RequiresMountsFor = ["/dev/mapper/nixos--vg-root"];
-        };
-        serviceConfig = {
-          StandardOutput = "journal+console";
-          StandardError = "journal+console";
-          Type = "oneshot";
-        };
-        script = rootExplosion;
-      };
-    };
-  };
-
-  boot.tmp.cleanOnBoot = true;
-
-  fileSystems."/persistent" = {
-    # device = "/dev/root_vg/root";
-    neededForBoot = true;
-    # fsType = "btrfs";
-    # options = [ "subvol=persist" ];
-  };
-
-  # environment.persistence."/persistent/system" = {
-  #   enable = true;
-  #   hideMounts = true;
-  #   directories = [
-  #     "/var/lib/nixos"
-  #     "/var/lib/systemd/coredump"
-  #     "/var/lib/systemd/timers"
-  #     "/var/lib/udisks2"
-  #     "/var/log"
-  #   ];
-  #   # files = [
-  #   #   "/etc/machine-id"
-  #   #   # "/var/lib/logrotate.status" # TODO: doesn't play nicely with the service yet
-  #   # ];
-  # };
 
   disko.devices = {
     disk.main = {
