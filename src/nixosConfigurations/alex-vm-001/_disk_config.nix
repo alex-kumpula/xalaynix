@@ -86,6 +86,7 @@ in
   };
 
   boot.tmp.cleanOnBoot = true;
+  services.lvm.enable = true;
 
   fileSystems."/persistent" = {
     # device = "/dev/root_vg/root";
