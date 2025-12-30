@@ -7,7 +7,7 @@
       ./_persistence.nix
       vm-configuration 
       vm-hardware-configuration
-      git
+      git {}
       hosts.alex-vm-001
     ] ++ [
       inputs.disko.nixosModules.default
