@@ -6,7 +6,7 @@
 
 {
   # The Flake Parts export path
-  modules.nixos.git = { 
+  flake.modules.nixos.git = { 
     # This is the actual NixOS module set
 
     # 1. Define the options (Standard NixOS attribute)
