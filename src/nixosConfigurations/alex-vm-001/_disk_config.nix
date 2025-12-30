@@ -95,6 +95,8 @@ in
     # options = [ "subvol=persist" ];
   };
 
+  boot.initrd.systemd.enable = true;
+
   boot.initrd.systemd.services.debug-log = {
     description = "Initrd debug check";
     wantedBy = ["initrd.target"];
