@@ -11,6 +11,8 @@
         };
 
         programs.bash = {
+          enable = true;
+
           # Appended to ~/.bashrc
           bashrcExtra = ''
             # Custom stuff here
