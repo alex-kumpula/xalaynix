@@ -1,8 +1,15 @@
-{ config, lib, ... }:
-let
-  cfg = config.flakeConfig.git;
+# ./modules/git.nix
 
-  gitModule = {
+{ lib, ... }: 
+# No 'config' in the function signature needed here, as we defer its use
+# and let the inner NixOS module evaluation provide it.
+
+{
+  # The Flake Parts export path
+  flake.modules.nixos.git = { 
+    # This is the actual NixOS module set
+
+    # 1. Define the options (Standard NixOS attribute)
     options.flakeConfig.git = {
       userName = lib.mkOption {
         type = lib.types.str;
@@ -16,14 +23,12 @@ let
       };
     };
 
+    # 2. Configure the system (Standard NixOS attribute)
     config = {
+      # 🌟 Access 'config' and its attributes DIRECTLY here (Scope B)
       programs.git.enable = true;
-      programs.git.userName = cfg.userName;
-      programs.git.userEmail = cfg.userEmail;
+      programs.git.userName = config.flakeConfig.git.userName;
+      programs.git.userEmail = config.flakeConfig.git.userEmail;
     };
   };
-
-in
-{
-  flake.modules.nixos.git = gitModule;
 }
