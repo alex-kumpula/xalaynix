@@ -151,11 +151,29 @@ in
     };
   };
 
+  boot.tmp.cleanOnBoot = true;
+
   fileSystems."/persistent" = {
     # device = "/dev/root_vg/root";
     neededForBoot = true;
     # fsType = "btrfs";
     # options = [ "subvol=persist" ];
+  };
+
+  environment.persistence."/persistent/system" = {
+    enable = true;
+    hideMounts = true;
+    directories = [
+      "/var/lib/nixos"
+      "/var/lib/systemd/coredump"
+      "/var/lib/systemd/timers"
+      "/var/lib/udisks2"
+      "/var/log"
+    ];
+    files = [
+      "/etc/machine-id"
+      # "/var/lib/logrotate.status" # TODO: doesn't play nicely with the service yet
+    ];
   };
 
   disko.devices = {
