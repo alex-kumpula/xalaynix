@@ -5,6 +5,7 @@
 
     modules = with config.flake.modules.homeManager; [
       alex
+      yazi
     ];
   };
 
