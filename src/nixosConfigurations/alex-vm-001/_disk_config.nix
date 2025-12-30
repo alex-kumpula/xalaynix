@@ -55,9 +55,6 @@ let
   '';
 in
 {
-  
-
-  
   # Explode / on every boot and resume, see https://grahamc.com/blog/erase-your-darlings/
   boot.initrd.systemd = {
     extraBin = {
