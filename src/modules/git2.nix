@@ -5,17 +5,11 @@
     config, lib, ... 
     }: 
     {
-      options.test123.git = {
+      options.test12345.git = {
         enable = lib.mkOption {
           type = lib.types.bool;
           default = true;
           description = "Enable simple git configuration.";
-        };
-      };
-
-      config = {
-        programs.git = {
-          enable = config.test123.git.enable;
         };
       };
   };
