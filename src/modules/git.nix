@@ -1,39 +1,27 @@
-# ./modules/git.nix
-
-{ lib, config, ... }: 
-# No 'config' in the function signature needed here, as we defer its use
-# and let the inner NixOS module evaluation provide it.
-
+# ./modules/git-simple.nix
+{ self, lib, ... }:  # flake-parts module
 {
-  # The Flake Parts export path
-  flake.modules.nixos.git = { 
-    # This is the actual NixOS module set
-
-    # 1. Define the options (Standard NixOS attribute)
-    options.flakeConfig.git = {
+  flake.modules.git = 
+    { config, lib, ... }: 
+    {
+    options.test123.git = {
       userName = lib.mkOption {
         type = lib.types.str;
         default = "default";
-        description = "The name to use in git commits.";
+        description = "Git user name";
       };
+      
       userEmail = lib.mkOption {
         type = lib.types.str;
         default = "default@example.com";
-        description = "The email to use in git commits.";
+        description = "Git user email";
       };
     };
 
-    # 2. Configure the system (Standard NixOS attribute)
-    config = 
-      let 
-        # Define cfg lazily inside the config block to avoid the missing attribute error
-        cfg = config.flakeConfig.git; 
-      in
-      {
-      # 🌟 Access 'config' and its attributes DIRECTLY here (Scope B)
-      programs.git.enable = true;
-      programs.git.userName = cfg.userName;
-      programs.git.userEmail = cfg.userEmail;
+    programs.git = {
+      enable = true;
+      userName = config.test123.git.userName;
+      userEmail = config.test123.git.userEmail;
     };
   };
 }
