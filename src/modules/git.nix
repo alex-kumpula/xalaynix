@@ -24,11 +24,16 @@
     };
 
     # 2. Configure the system (Standard NixOS attribute)
-    config = {
+    config = 
+      let 
+        # Define cfg lazily inside the config block to avoid the missing attribute error
+        cfg = config.flakeConfig.git; 
+      in
+      {
       # 🌟 Access 'config' and its attributes DIRECTLY here (Scope B)
       programs.git.enable = true;
-      programs.git.userName = config.flakeConfig.git.userName;
-      programs.git.userEmail = config.flakeConfig.git.userEmail;
+      programs.git.userName = cfg.userName;
+      programs.git.userEmail = cfg.userEmail;
     };
   };
 }
