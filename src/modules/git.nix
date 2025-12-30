@@ -2,8 +2,7 @@
 let
   cfg = config.flakeConfig.git;
 
-  gitModule = { config, lib, ... }:
-  {
+  gitModule = {
     options.flakeConfig.git = {
       userName = lib.mkOption {
         type = lib.types.str;
