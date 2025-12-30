@@ -6,8 +6,8 @@
       config = {
         programs.yazi = {
           enable = true;
-          bashIntegration = true;
-          zshIntegration = true;
+          enableBashIntegration = true;
+          enableZshIntegration = true;
         };
 
         # programs.bash = {
