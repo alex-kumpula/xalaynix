@@ -1,7 +1,7 @@
 # ./modules/git-simple.nix
 { self, lib, ... }:  # flake-parts module
 {
-  flake.modules.git = 
+  flake.modules.nixos.git = 
     { config, lib, ... }: 
     {
     options.test123.git = {
