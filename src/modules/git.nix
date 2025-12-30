@@ -18,10 +18,12 @@
       };
     };
 
-    programs.git = {
-      enable = true;
-      userName = config.test123.git.userName;
-      userEmail = config.test123.git.userEmail;
+    config = {
+      programs.git = {
+        enable = true;
+        userName = config.test123.git.userName;
+        userEmail = config.test123.git.userEmail;
+      };
     };
   };
 }
