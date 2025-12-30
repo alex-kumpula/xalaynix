@@ -110,21 +110,21 @@ in
     '';
   };
 
-  # environment.persistence."/persistent/system" = {
-  #   enable = true;
-  #   hideMounts = true;
-  #   directories = [
-  #     "/var/lib/nixos"
-  #     "/var/lib/systemd/coredump"
-  #     "/var/lib/systemd/timers"
-  #     "/var/lib/udisks2"
-  #     "/var/log"
-  #   ];
-  #   # files = [
-  #   #   "/etc/machine-id"
-  #   #   # "/var/lib/logrotate.status" # TODO: doesn't play nicely with the service yet
-  #   # ];
-  # };
+  environment.persistence."/persistent/system" = {
+    enable = true;
+    hideMounts = true;
+    directories = [
+      "/var/lib/nixos"
+      "/var/lib/systemd/coredump"
+      "/var/lib/systemd/timers"
+      "/var/lib/udisks2"
+      "/var/log"
+    ];
+    # files = [
+    #   "/etc/machine-id"
+    #   # "/var/lib/logrotate.status" # TODO: doesn't play nicely with the service yet
+    # ];
+  };
 
   # boot.initrd.systemd.services.recreate-root = {
   #   description = "Rolling over and creating new filesystem root";
