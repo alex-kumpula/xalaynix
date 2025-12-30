@@ -95,6 +95,19 @@ in
     # options = [ "subvol=persist" ];
   };
 
+  boot.initrd.systemd.services.debug-log = {
+    description = "Initrd debug check";
+    wantedBy = ["initrd.target"];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+    };
+    # This message is guaranteed to survive a crash
+    script = ''
+      echo "INITRD: SYSTEMD STARTUP CONFIRMED!" >/dev/kmsg
+    '';
+  };
+
   # environment.persistence."/persistent/system" = {
   #   enable = true;
   #   hideMounts = true;
