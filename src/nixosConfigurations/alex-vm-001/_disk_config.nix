@@ -120,10 +120,10 @@ in
       "/var/lib/udisks2"
       "/var/log"
     ];
-    # files = [
-    #   "/etc/machine-id"
-    #   # "/var/lib/logrotate.status" # TODO: doesn't play nicely with the service yet
-    # ];
+    files = [
+      "/etc/machine-id"
+      # "/var/lib/logrotate.status" # TODO: doesn't play nicely with the service yet
+    ];
   };
 
   # boot.initrd.systemd.services.recreate-root = {
