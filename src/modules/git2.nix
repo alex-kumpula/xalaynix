@@ -5,7 +5,7 @@
     config, lib, ... 
     }: 
     {
-      options.test12345.git = {
+      options.test123.git = {
         enable = lib.mkOption {
           type = lib.types.bool;
           default = true;
