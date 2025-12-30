@@ -121,7 +121,7 @@ in
       "/var/log"
     ];
     files = [
-      "/etc/machine-id"
+      # "/etc/machine-id"
       # "/var/lib/logrotate.status" # TODO: doesn't play nicely with the service yet
     ];
   };
