@@ -35,14 +35,26 @@
           systemReadyScript
         ];
         
-        # 4. Define the Standard Systemd Service (no changes needed here)
-        systemd.services."system-ready-timestamp" = {
+        systemd.services.system-ready-timestamp = {
           description = "Create a timestamped file when the system is ready";
-          Service.Type = "oneshot";
-          Service.ExecStart = "${systemReadyScript}/bin/create-system-ready-file";
-          Unit.WantedBy = [ "multi-user.target" ];
-          Unit.After = [ "network-online.target" ];
-          Service.RemainAfterExit = true;
+
+          # Options that go into the [Unit] section of the Systemd file
+          unitConfig = {
+            # Use the Nix option name, which corresponds to the Systemd option name
+            # WantedBy is part of the [Install] section, but After is part of [Unit]
+            After = [ "network-online.target" "nss-lookup.target" ];
+          };
+
+          # Options that go into the [Service] section of the Systemd file
+          serviceConfig = {
+            Type = "oneshot";
+            ExecStart = "${systemReadyScript}/bin/create-system-ready-file";
+            RemainAfterExit = true;
+          };
+          
+          # Options that go into the [Install] section
+          # The 'WantedBy' is the most common install option used in NixOS
+          wantedBy = [ "multi-user.target" ];
         };
       };
       
