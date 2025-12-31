@@ -36,7 +36,7 @@
         ];
         
         # 4. Define the Standard Systemd Service (no changes needed here)
-        systemd.services.system-ready-timestamp = {
+        systemd.services."system-ready-timestamp" = {
           description = "Create a timestamped file when the system is ready";
           Service.Type = "oneshot";
           Service.ExecStart = "${systemReadyScript}/bin/create-system-ready-file";
