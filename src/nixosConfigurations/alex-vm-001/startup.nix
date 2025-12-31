@@ -29,20 +29,23 @@
       '';
     in
     {
-      # 3. Add the script to the system's PATH
-      environment.systemPackages = [
-        systemReadyScript
-      ];
-      
-      # 4. Define the Standard Systemd Service (no changes needed here)
-      systemd.services.system-ready-timestamp = {
-        description = "Create a timestamped file when the system is ready";
-        Service.Type = "oneshot";
-        Service.ExecStart = "${systemReadyScript}/bin/create-system-ready-file";
-        Unit.WantedBy = [ "multi-user.target" ];
-        Unit.After = [ "network-online.target" ];
-        Service.RemainAfterExit = true;
+      config = {
+        # 3. Add the script to the system's PATH
+        environment.systemPackages = [
+          systemReadyScript
+        ];
+        
+        # 4. Define the Standard Systemd Service (no changes needed here)
+        systemd.services.system-ready-timestamp = {
+          description = "Create a timestamped file when the system is ready";
+          Service.Type = "oneshot";
+          Service.ExecStart = "${systemReadyScript}/bin/create-system-ready-file";
+          Unit.WantedBy = [ "multi-user.target" ];
+          Unit.After = [ "network-online.target" ];
+          Service.RemainAfterExit = true;
+        };
       };
+      
     };
 }
 
