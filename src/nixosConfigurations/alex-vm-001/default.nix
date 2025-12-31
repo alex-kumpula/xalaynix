@@ -9,6 +9,7 @@
       vm-hardware-configuration
       git
       alex-vm-001
+      startupTest
     ] ++ [
       inputs.disko.nixosModules.default
       inputs.impermanence.nixosModules.impermanence
