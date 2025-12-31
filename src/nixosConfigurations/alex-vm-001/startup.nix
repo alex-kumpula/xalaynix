@@ -5,7 +5,6 @@
     let
       # 1. Define a Nix variable for the build date (Example of Nix interpolation)
       # This date will be baked into the script when you run nixos-rebuild.
-      BUILD_DATE = (builtins.currentTime);
 
       # 2. Define the Script/Command
       # Note the mix of Nix and Bash variables below:
@@ -15,14 +14,10 @@
         # It gets the current time when the script executes.
         RUNTIME_TIMESTAMP=$(${pkgs.coreutils}/bin/date +%Y-%m-%d_%H-%M-%S)
         
-        # This is a NIX variable, replaced at BUILD TIME.
-        # It gets the date the configuration was built.
-        BUILD_DATE="${BUILD_DATE}" 
-        
         TARGET_DIR="/var"
         
         # Create the timestamped file. We include both timestamps for demonstration.
-        FILENAME="$TARGET_DIR/system_ready_file_RUNTIME-$RUNTIME_TIMESTAMP-BUILT-$BUILD_DATE.txt"
+        FILENAME="$TARGET_DIR/system_ready_file_RUNTIME-$RUNTIME_TIMESTAMP.txt"
         
         # Use the Nix store path of 'touch' via NIX interpolation (BUILD TIME)
         if ${pkgs.coreutils}/bin/touch "$FILENAME"; then
