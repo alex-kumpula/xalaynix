@@ -31,11 +31,15 @@
       testScript = ''
         #!/bin/sh
 
-        echo "This is a test! ✅" >/dev/kmsg
-
+        echo "Making initial root snapshot..." >/dev/kmsg
 
         mkdir -p /var/test-startup
         echo "Startup test completed successfully." > /var/test-startup/startup_test_complete.txt
+
+        mkdir -p /snapshots
+
+        btrfs subvolume snapshot -r / /snapshots/initial_snapshot
+        echo "Initial root snapshot made! ✅" >/dev/kmsg
       '';
     in
     {
