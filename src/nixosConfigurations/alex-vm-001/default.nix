@@ -9,9 +9,9 @@
       vm-hardware-configuration
       git
       alex-vm-001
-      startupTest
+      btrfs-impermanence
     ] ++ [
-      inputs.disko.nixosModules.default
+      # inputs.disko.nixosModules.default
       inputs.impermanence.nixosModules.impermanence
     ];
   };

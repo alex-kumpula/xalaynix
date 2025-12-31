@@ -2,9 +2,6 @@
 let
   device = "/dev/vda";
 
-  mainDevice = "/dev/mapper/root_vg-root";
-  tempMountDir = "/mnt/btrfs-marker";
-
   rootExplosion = ''
     # --- START OF SCRIPT ---
     

@@ -1,27 +1,11 @@
 { inputs, config, lib, ... }:
 {
-  flake.modules.nixos.startupTest =
+  flake.modules.nixos.btrfs-impermanence =
     { pkgs, ... }:
     let
-      testScript = ''
-        #!/bin/sh
-
-        echo "Making initial root snapshot..." >/dev/kmsg
-
-        mkdir -p /var/test-startup
-        echo "Startup test completed successfully." > /var/test-startup/startup_test_complete.txt
-
-        mkdir -p /snapshots
-
-        btrfs subvolume snapshot -r / /snapshots/initial_snapshot
-        echo "Initial root snapshot made! ✅" >/dev/kmsg
-      '';
-
-      # 1. Define Dependencies
       btrfsProgs = pkgs.btrfs-progs;
       coreUtils = pkgs.coreutils;
-      
-      # 2. Define the Script with Absolute Paths (Nix Interpolation)
+
       initialSnapshotScript = pkgs.writeShellScriptBin "create-initial-snapshot" ''
         #!${pkgs.runtimeShell}
 
@@ -44,7 +28,7 @@
         # Ensure the script and its dependencies are available
         environment.systemPackages = [
           initialSnapshotScript
-          btrfsProgs # Though not strictly needed here, good practice
+          btrfsProgs
           coreUtils
         ];
         
@@ -57,7 +41,6 @@
           unitConfig = {
             ConditionPathExists = "!/snapshots/initial_snapshot";
             ConditionKernelCommandLine = ["!resume="];
-            # RequiresMountsFor = ["/dev/mapper/root_vg-root"];
             RequiresMountsFor = ["/"];
           };
 
