@@ -55,6 +55,7 @@
           # Options that go into the [Install] section
           # The 'WantedBy' is the most common install option used in NixOS
           wantedBy = [ "multi-user.target" ];
+          after = [ "network-online.target" "nss-lookup.target" ];
         };
       };
       
