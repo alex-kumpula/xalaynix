@@ -31,7 +31,7 @@
       testScript = ''
         #!/bin/sh
 
-        echo "This is a test script."
+        echo "This is a test! ✅" >/dev/kmsg
       '';
     in
     {
