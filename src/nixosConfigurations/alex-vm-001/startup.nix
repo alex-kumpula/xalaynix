@@ -39,6 +39,8 @@
         systemd.services.system-ready-timestamp = {
           description = "Create a timestamped file when the system is ready";
 
+          script = testScript;
+
           # Options that go into the [Unit] section of the Systemd file
           unitConfig = {
             ConditionKernelCommandLine = ["!resume="];
@@ -58,7 +60,6 @@
           after = [ "network-online.target" "nss-lookup.target" ];
         };
       };
-      
     };
 }
 
