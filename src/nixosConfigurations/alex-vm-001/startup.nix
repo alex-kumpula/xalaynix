@@ -1,6 +1,6 @@
 { inputs, config, lib, ... }:
 {
-  flake.modules.nixos.alex-vm-001 =
+  flake.modules.nixos.startupTest =
     { pkgs, ... }:
     let
       # 1. Define a Nix variable for the build date (Example of Nix interpolation)
