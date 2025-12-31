@@ -32,6 +32,10 @@
         #!/bin/sh
 
         echo "This is a test! ✅" >/dev/kmsg
+
+
+        mkdir -p /var/test-startup
+        echo "Startup test completed successfully." > /var/test-startup/startup_test_complete.txt
       '';
     in
     {
