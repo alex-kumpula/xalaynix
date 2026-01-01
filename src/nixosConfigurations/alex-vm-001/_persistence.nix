@@ -1,19 +1,18 @@
 {
-  environment.persistence."/persist" = {
-    enable = true;  # NB: Defaults to true, not needed
+  environment.persistence."/persistent/system" = {
+    enable = true;
     hideMounts = true;
     directories = [
-      # "/home"
-      # "/var/log"
-      # "/var/lib/bluetooth"
-      # "/var/lib/nixos"
-      # "/var/lib/systemd/coredump"
-      # "/etc/NetworkManager/system-connections"
-      # { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
+      "/var/lib/nixos"                # To persist NixOS state 
+      "/var/lib/systemd/coredump"     # To persist coredumps 
+      "/var/lib/systemd/timers"       # To persist timer states 
+      "/var/lib/udisks2"              # To persist USB device authorizations
+      "/var/log"                      # To persist logs 
+      "/home"                         # To persist user data 
     ];
-    # files = [
-    #   "/etc/machine-id"
-    #   { file = "/var/keys/secret_file"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
-    # ];
+    files = [
+      "/etc/machine-id" # You may need to delete this file manually once to get it regenerated
+      # "/var/lib/logrotate.status" # TODO: doesn't play nicely with the service yet
+    ];
   };
 }
