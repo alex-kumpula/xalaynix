@@ -16,11 +16,7 @@
           "/var/lib/systemd/timers"       # To persist timer states 
           "/var/lib/udisks2"              # To persist USB device authorizations
           "/var/log"                      # To persist logs 
-          # "/home"                         # To persist user data 
-          {
-            directory = "/home";
-            neededForBoot = true; # Unsure if this is a real attribute
-          }
+          "/home"                         # To persist user data 
         ];
         files = [
           "/etc/machine-id" # You may need to delete this file manually once to get it regenerated
