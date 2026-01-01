@@ -5,7 +5,7 @@
 {
   flake.modules.nixos.btrfs-impermanence = {
     imports = [
-      (inputs.self.flake.diskoConfigurations.btrfs-impermanence-disk {
+      (inputs.self.diskoConfigurations.btrfs-impermanence-disk {
         device = "/dev/vda";
       })
     ];
