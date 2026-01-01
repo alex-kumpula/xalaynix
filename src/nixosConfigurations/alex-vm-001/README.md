@@ -12,3 +12,4 @@ The result is a system that has a clean root after each boot, with opt-in persis
 6. Edit [_disko.nix](./_disko.nix) to change the device variable at the top of the file to the name of the disk you will be formatting.
 7. Format your disk with [Disko](https://github.com/nix-community/disko). **WARNING: This will delete any existing data on this disk!**
    1. Run `sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount ./_disko.nix`
+8. Run `sudo nixos-install --root /mnt --flake github:alex-kumpula/xalaynix#alex-vm-001`

@@ -121,6 +121,7 @@
 
       boot.tmp.cleanOnBoot = true;
       services.lvm.enable = true;
+      services.userborn.enable = true;
 
       # Explode / on every boot and resume, see https://grahamc.com/blog/erase-your-darlings/
       boot.initrd.systemd = {
