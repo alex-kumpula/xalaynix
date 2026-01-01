@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake-file.inputs = {
     disko = {
@@ -6,4 +6,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  imports = [
+    inputs.disko.flakeModules.default
+  ];
 }
