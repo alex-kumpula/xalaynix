@@ -1,0 +1,15 @@
+{ inputs, config, lib, ... }:
+{
+  flake.modules.generic.systemConstants =
+    { lib, ... }:
+    {
+      options.systemConstants = lib.mkOption {
+        type = lib.types.attrsOf lib.types.unspecified;
+        default = { };
+      };
+
+      config.systemConstants = {
+        mainDisk = "/dev/vda";
+      };
+    };
+}

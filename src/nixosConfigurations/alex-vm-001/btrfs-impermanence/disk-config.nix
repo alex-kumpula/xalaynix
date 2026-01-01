@@ -12,12 +12,16 @@
   };
 
   flake.diskoConfigurations.btrfs-impermanence-disk = 
-    { device, ... }: 
+    { device, config, ... }: 
     {
+      imports = [
+        inputs.self.modules.generic.systemConstants
+      ];
+
       disko.devices = {
         disk = {
           main = {
-            device = device;
+            device = config.systemConstants.mainDisk;
             type = "disk";
             content = {
               type = "gpt";
