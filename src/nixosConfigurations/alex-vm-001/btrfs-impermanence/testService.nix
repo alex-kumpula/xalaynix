@@ -29,7 +29,7 @@
                 RequiresMountsFor = ["/dev/mapper/root_vg-root"];
               };
               serviceConfig = {
-                ExecStart = config.xalaynix.testScript;
+                ExecStart = "${config.xalaynix.testScript}/bin/testScript";
                 StandardOutput = "journal+console";
                 StandardError = "journal+console";
                 Type = "oneshot";
