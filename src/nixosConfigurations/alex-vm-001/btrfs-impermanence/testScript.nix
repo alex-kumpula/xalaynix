@@ -14,9 +14,9 @@
 
         xalaynix.testScript = pkgs.writeShellScriptBin "testScript" ''
           #!/bin/sh
-          set -e
+          echo "🧨🧨🧨🧨🧨🧨🧨🧨🧨🧨🧨🧨" >/dev/kmsg
 
-          echo "THIS IS A TEST SCRIPT!!!"
+          echo "THIS IS A TEST SCRIPT!!!" >/dev/kmsg
           
         '';
 
