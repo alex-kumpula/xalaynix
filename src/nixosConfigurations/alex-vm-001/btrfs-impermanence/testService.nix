@@ -15,6 +15,7 @@
           enable = true;
           extraBin = {
             grep = "${pkgs.gnugrep}/bin/grep";
+            testScript = "${config.xalaynix.testScript}/bin/testScript";
           };
           services = {
             test-service = {
