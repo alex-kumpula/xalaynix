@@ -1,7 +1,7 @@
 { inputs, config, lib, ... }:
 {
   flake.modules.nixos.btrfs-impermanence =
-    { lib, pkgs, ... }:
+    { lib, pkgs, config, ... }:
     {
 
       config = {
