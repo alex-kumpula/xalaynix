@@ -9,10 +9,10 @@
         description = "A test script that echoes a message.";
       };
 
-      config.xalaynix = {
+      config = {
 
 
-        testScript = pkgs.writeShellScript "testScript.sh" ''
+        xalaynix.testScript = pkgs.writeShellScript "testScript.sh" ''
           #!/bin/sh
           set -e
 
