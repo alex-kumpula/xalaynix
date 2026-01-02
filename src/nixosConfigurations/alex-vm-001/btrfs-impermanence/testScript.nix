@@ -3,11 +3,11 @@
   flake.modules.nixos.btrfs-impermanence =
     { lib, pkgs, ... }:
     {
-      # options.xalaynix.testScript = lib.mkOption {
-      #   type = lib.types.str;
-      #   default = "";
-      #   description = "A test script that echoes a message.";
-      # };
+      options.xalaynix.testScript = lib.mkOption {
+        type = lib.types.str;
+        default = "";
+        description = "A test script that echoes a message.";
+      };
 
       config = {
 
