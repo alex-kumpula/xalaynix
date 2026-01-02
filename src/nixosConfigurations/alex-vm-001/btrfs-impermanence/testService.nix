@@ -6,6 +6,10 @@
 
       config = {
 
+        environment.systemPackages = [
+          config.xalaynix.testScript
+        ];
+
 
         boot.initrd.systemd = {
           enable = true;
