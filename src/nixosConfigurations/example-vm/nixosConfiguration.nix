@@ -5,7 +5,7 @@
     modules = with inputs.self.modules.nixos; [ 
       example-vm
     ] ++ [
-      inputs.xalaynix.flake.modules.nixos.xalaynix
+      inputs.xalaynix.modules.nixos.xalaynix
     ];
   };
 }
