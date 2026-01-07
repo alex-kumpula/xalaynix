@@ -14,6 +14,10 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./src);
 
   inputs = {
+    cleanslate = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:alex-kumpula/nixos-cleanslate";
+    };
     disko = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/disko";

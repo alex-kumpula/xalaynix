@@ -4,18 +4,18 @@
   { config, ... }: 
   {
     imports = [
-        inputs.impermanence.nixosModules.impermanence
-      ];
+      inputs.impermanence.nixosModules.impermanence
+    ];
 
-      environment.persistence."/persistent/system" = {
-        enable = true;
-        hideMounts = true;
-        directories = config.xalaynix.commonPersistentDirectories;
-        files = config.xalaynix.commonPersistentFiles;
-      };
+    environment.persistence."/persistent/system" = {
+      enable = true;
+      hideMounts = true;
+      directories = config.xalaynix.commonPersistentDirectories;
+      files = config.xalaynix.commonPersistentFiles;
+    };
 
-      fileSystems."/persistent" = {
-        neededForBoot = true;
-      };
+    fileSystems."/persistent" = {
+      neededForBoot = true;
+    };
   };
 }
