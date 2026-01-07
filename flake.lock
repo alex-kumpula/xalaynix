@@ -295,11 +295,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1767766940,
-        "narHash": "sha256-y5MvCpqF1R8rWxU44Nfny4TZcLR1KcxFIk4yDyaEhZI=",
+        "lastModified": 1767766992,
+        "narHash": "sha256-JuEfE0Wu+Gg2tzJt2qsSNBDrSpTUUMEHLGlbMPtLfHs=",
         "owner": "alex-kumpula",
         "repo": "xalaynix-modules",
-        "rev": "511f07a74669ab1af1afd40062e4a4940d607f24",
+        "rev": "94fbf8fd903e58fb2e1c437a53162342f8d9b456",
         "type": "github"
       },
       "original": {
