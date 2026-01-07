@@ -4,7 +4,7 @@
   { ... }: 
   {
     imports = [
-      inputs.cleanslate.modules.cleanslate
+      inputs.cleanslate.modules.nixos.cleanslate
     ];
 
     # Enables the whole module
