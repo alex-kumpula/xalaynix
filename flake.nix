@@ -32,6 +32,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-lib.follows = "nixpkgs";
     systems.url = "github:nix-systems/default";
+    xalaynix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:alex-kumpula/xalaynix-modules";
+    };
   };
 
 }
