@@ -6,6 +6,7 @@
       example-vm
     ] ++ [
       inputs.xalaynix.modules.nixos.xalaynix
+      inputs.xalaynixDesktop.modules.nixos.xalaynixDesktop
     ];
   };
 }
