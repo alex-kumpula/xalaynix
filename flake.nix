@@ -40,6 +40,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:alex-kumpula/xalaynix-modules";
     };
+    xalaynixDesktop = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:alex-kumpula/xalaynix-desktop";
+    };
   };
 
 }
