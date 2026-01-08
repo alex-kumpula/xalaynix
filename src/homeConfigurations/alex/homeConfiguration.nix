@@ -5,7 +5,6 @@
 
     modules = with config.flake.modules.homeManager; [
       alex
-      yazi
     ] ++ [
       inputs.xalaynixDesktop.modules.homeManager.xalaynixDesktop
     ];
