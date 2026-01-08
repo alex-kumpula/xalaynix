@@ -26,6 +26,7 @@
 
     home = {
       username = "defaultUser";
+      homeDirectory = "/home/defaultUser";
     };
 
     # Enable home-manager to install and manage itself
