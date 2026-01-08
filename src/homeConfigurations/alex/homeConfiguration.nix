@@ -6,7 +6,7 @@
     modules = with config.flake.modules.homeManager; [
       alex
     ] ++ [
-      inputs.xalaynix.modules.home-manager.xalaynix
+      inputs.xalaynix.modules.homeManager.xalaynix
       inputs.xalaynixDesktop.modules.homeManager.xalaynixDesktop
     ];
   };
