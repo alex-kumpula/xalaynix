@@ -657,11 +657,11 @@
         "systems": "systems_4"
       },
       "locked": {
-        "lastModified": 1767829106,
-        "narHash": "sha256-05VtF0WSLyiEUqMXb7zcGX4ZdYqWgd430l0ZUocTD50=",
+        "lastModified": 1767840216,
+        "narHash": "sha256-jbN3jxSlSrqWIhWexeXayyWufPRPHz17XwnUM4wAWvA=",
         "owner": "alex-kumpula",
         "repo": "xalaynix-desktop",
-        "rev": "3deeeffee47efb56348bfacd5178268942da8d66",
+        "rev": "f6399c18803957bc89646acda08ac687f9f687c1",
         "type": "github"
       },
       "original": {
