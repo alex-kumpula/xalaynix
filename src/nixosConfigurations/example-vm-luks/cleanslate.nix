@@ -13,6 +13,7 @@
 
     boot.initrd.systemd.emergencyAccess = true;
     boot.kernelParams = [ "rd.systemd.unit=emergency.target" ];
+    boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "ehci_pci" "usb_storage" "usbhid" "sd_mod" "evdev" ];
     boot.initrd.kernelModules = [ 
       "virtio_pci" 
       "virtio_input" 
