@@ -12,6 +12,7 @@
     # boot.kernelParams = [ "systemd.confirm_spawn=true" "systemd.log_level=debug" ];
 
     boot.initrd.systemd.emergencyAccess = true;
+    boot.kernelParams = [ "rd.systemd.unit=emergency.target" ];
     
     
 
