@@ -17,11 +17,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1768196667,
-        "narHash": "sha256-ITVIcbIIIwIYIXTiin1igI5+DCFom2h62BuuNwaGhBs=",
+        "lastModified": 1768352721,
+        "narHash": "sha256-blpFQuSlKpOUjcqwMaTGIkSgO9GsfYWriURa04ohnME=",
         "owner": "alex-kumpula",
         "repo": "nixos-cleanslate",
-        "rev": "ee3374a2cf477a05aa605f71b5fe62329d6e8065",
+        "rev": "516393880a8a9258d4a712a70d17a9fb03557773",
         "type": "github"
       },
       "original": {
@@ -494,11 +494,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1768028080,
-        "narHash": "sha256-50aDK+8eLvsLK39TzQhKNq50/HcXyP4hyxOYoPoVxjo=",
+        "lastModified": 1768242861,
+        "narHash": "sha256-F4IIxa5xDHjtrmMcayM8lHctUq1oGltfBQu2+oqDWP4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d03088749a110d52a4739348f39a63f84bb0be14",
+        "rev": "1327e798cb055f96f92685df444e9a2c326ab5ed",
         "type": "github"
       },
       "original": {

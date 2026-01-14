@@ -7,6 +7,11 @@
       inputs.cleanslate.modules.nixos.cleanslate
     ];
 
+    # DEBUG
+    systemd.additionalUpstreamSystemUnits = ["debug-shell.service"];
+    boot.kernelParams = [ "systemd.confirm_spawn=true" "systemd.log_level=debug" ];
+    
+
     # Enables the whole module
     cleanslate.enable = true;
 
