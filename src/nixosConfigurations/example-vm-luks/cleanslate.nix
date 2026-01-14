@@ -6,25 +6,6 @@
     imports = [
       inputs.cleanslate.modules.nixos.cleanslate
     ];
-
-    # DEBUG
-    # systemd.additionalUpstreamSystemUnits = ["debug-shell.service"];
-    # boot.kernelParams = [ "systemd.confirm_spawn=true" "systemd.log_level=debug" ];
-
-    # boot.initrd.systemd.emergencyAccess = true;
-    # boot.kernelParams = [ "rd.systemd.unit=emergency.target" ];
-    # boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "ehci_pci" "usb_storage" "usbhid" "sd_mod" "evdev" ];
-    # boot.initrd.kernelModules = [ 
-    #   "virtio_pci" 
-    #   "virtio_input" 
-    #   "virtio_blk"      # Just in case your disk is also VirtIO
-    #   "virtio_net" 
-    #   "9p"              # If using filesystem sharing
-    #   "9pnet_virtio"
-    # ];
-    
-    
-
     # Enables the whole module
     cleanslate.enable = true;
 
@@ -40,7 +21,7 @@
     cleanslate.services = {
     
       # Define a service to manage the main root subvolume
-      "root-wipe-service" = {
+      "rootWipeService" = {
         
         # Optional: Explicitly enable/disable this specific service (default is true)
         enable = true;
