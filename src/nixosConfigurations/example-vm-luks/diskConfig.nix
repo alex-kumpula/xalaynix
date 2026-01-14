@@ -32,7 +32,7 @@
                 size = "8G";
                 content = {
                   type = "luks";
-                  name = "root-crypt";
+                  name = "swap-crypt";
                   settings = {
                     allowDiscards = true;
                   };
