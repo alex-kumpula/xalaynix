@@ -13,6 +13,15 @@
 
     boot.initrd.systemd.emergencyAccess = true;
     boot.kernelParams = [ "rd.systemd.unit=emergency.target" ];
+    boot.initrd.kernelModules = [ 
+      "virtio_pci" 
+      "virtio_keyboard" 
+      "virtio_input" 
+      "virtio_blk"      # Just in case your disk is also VirtIO
+      "virtio_net" 
+      "9p"              # If using filesystem sharing
+      "9pnet_virtio"
+    ];
     
     
 
