@@ -16,15 +16,7 @@
       "systemd.confirm_spawn=true" 
       "systemd.log_level=debug" 
     ];
-    boot.initrd.availableKernelModules = [ 
-      "usbhid" 
-      "hid_generic" 
-      "evdev" 
-      "atkbd"       # Standard laptop/PS2 keyboards
-      "xhci_pci"    # USB 3.0 controllers
-      "ohci_pci"    # Older USB controllers
-      "ehci_pci"    # USB 2.0 controllers
-    ];
+    boot.initrd.kernelModules = [ "usbhid" "hid_generic" "atkbd" "evdev" "i8042" ];
     
 
     # Enables the whole module
