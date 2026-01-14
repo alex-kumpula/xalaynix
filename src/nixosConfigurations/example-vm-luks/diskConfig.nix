@@ -31,8 +31,15 @@
               swap = {
                 size = "8G";
                 content = {
-                  type = "swap";
-                  resumeDevice = true;
+                  type = "luks";
+                  name = "root-crypt";
+                  settings = {
+                    allowDiscards = true;
+                  };
+                  content = {
+                    type = "swap";
+                    resumeDevice = true;
+                  };
                 };
               };
               root = {
