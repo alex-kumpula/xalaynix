@@ -11,17 +11,17 @@
     # systemd.additionalUpstreamSystemUnits = ["debug-shell.service"];
     # boot.kernelParams = [ "systemd.confirm_spawn=true" "systemd.log_level=debug" ];
 
-    boot.initrd.systemd.emergencyAccess = true;
-    boot.kernelParams = [ "rd.systemd.unit=emergency.target" ];
-    boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "ehci_pci" "usb_storage" "usbhid" "sd_mod" "evdev" ];
-    boot.initrd.kernelModules = [ 
-      "virtio_pci" 
-      "virtio_input" 
-      "virtio_blk"      # Just in case your disk is also VirtIO
-      "virtio_net" 
-      "9p"              # If using filesystem sharing
-      "9pnet_virtio"
-    ];
+    # boot.initrd.systemd.emergencyAccess = true;
+    # boot.kernelParams = [ "rd.systemd.unit=emergency.target" ];
+    # boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "ehci_pci" "usb_storage" "usbhid" "sd_mod" "evdev" ];
+    # boot.initrd.kernelModules = [ 
+    #   "virtio_pci" 
+    #   "virtio_input" 
+    #   "virtio_blk"      # Just in case your disk is also VirtIO
+    #   "virtio_net" 
+    #   "9p"              # If using filesystem sharing
+    #   "9pnet_virtio"
+    # ];
     
     
 
