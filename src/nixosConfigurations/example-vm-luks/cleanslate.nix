@@ -8,8 +8,14 @@
     ];
 
     # DEBUG
-    systemd.additionalUpstreamSystemUnits = ["debug-shell.service"];
-    boot.kernelParams = [ "systemd.confirm_spawn=true" "systemd.log_level=debug" ];
+    # systemd.additionalUpstreamSystemUnits = ["debug-shell.service"];
+    # boot.kernelParams = [ "systemd.confirm_spawn=true" "systemd.log_level=debug" ];
+
+    boot.initrd.systemd.units."debug-shell.service".enable = true;
+    boot.kernelParams = [ 
+      "systemd.confirm_spawn=true" 
+      "systemd.log_level=debug" 
+    ];
     
 
     # Enables the whole module
