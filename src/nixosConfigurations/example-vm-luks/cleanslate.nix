@@ -11,12 +11,8 @@
     # systemd.additionalUpstreamSystemUnits = ["debug-shell.service"];
     # boot.kernelParams = [ "systemd.confirm_spawn=true" "systemd.log_level=debug" ];
 
-    boot.initrd.systemd.units."debug-shell.service".enable = true;
-    boot.kernelParams = [ 
-      "systemd.confirm_spawn=true" 
-      "systemd.log_level=debug" 
-    ];
-    boot.initrd.kernelModules = [ "usbhid" "hid_generic" "atkbd" "evdev" "i8042" ];
+    boot.initrd.systemd.emergencyAccess = true;
+    
     
 
     # Enables the whole module
