@@ -10,8 +10,8 @@
     environment.persistence."/persistent/system" = {
       enable = true;
       hideMounts = true;
-      directories = config.xalaynix.commonPersistentDirectories;
-      files = config.xalaynix.commonPersistentFiles;
+      directories = config.xalaynix.constants.commonPersistentDirectories;
+      files = config.xalaynix.constants.commonPersistentFiles;
     };
 
     fileSystems."/persistent" = {
