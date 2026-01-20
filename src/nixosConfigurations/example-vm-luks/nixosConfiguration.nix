@@ -5,7 +5,6 @@
     modules = with inputs.self.modules.nixos; [ 
       example-vm-luks
     ] ++ [
-      inputs.xalaynix.modules.nixos.xalaynix
       inputs.xalaynixDesktop.modules.nixos.xalaynixDesktop
     ];
   };
