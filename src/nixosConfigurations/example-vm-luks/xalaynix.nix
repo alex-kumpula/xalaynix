@@ -10,7 +10,8 @@
     xalaynix = {
       enable = true;
       preset = "minimal";
+      boot.bootDevice = "/dev/vda";
     };
-    
+
   };
 }
