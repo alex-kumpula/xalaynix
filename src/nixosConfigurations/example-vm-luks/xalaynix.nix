@@ -11,7 +11,7 @@
       enable = true;
       preset = "minimal";
       boot.bootDevice = "/dev/vda";
-      desktop.niri.enable = false;
+      desktop.niri.enable = true;
     };
 
   };
