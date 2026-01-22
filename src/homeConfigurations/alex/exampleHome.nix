@@ -4,11 +4,11 @@
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
 
     modules = with config.flake.modules.homeManager; [
-      alex
+      defaultUser
     ];
   };
 
-  flake.modules.homeManager.alex = {
+  flake.modules.homeManager.defaultUser = {
     pkgs,
     ...
   }: {
@@ -17,8 +17,8 @@
     ];
 
     home = {
-      username = "alex";
-      homeDirectory = "/home/alex";
+      username = "defaultUser";
+      homeDirectory = "/home/defaultUser";
     };
 
     # Some example packages
