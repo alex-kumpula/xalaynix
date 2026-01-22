@@ -1,6 +1,6 @@
 { inputs, config, ... }:
 {
-  flake.homeConfigurations.alex = inputs.home-manager.lib.homeManagerConfiguration {
+  flake.homeConfigurations.defaultUser = inputs.home-manager.lib.homeManagerConfiguration {
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
 
     modules = with config.flake.modules.homeManager; [
