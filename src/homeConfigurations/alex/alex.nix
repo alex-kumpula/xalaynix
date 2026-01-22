@@ -5,42 +5,27 @@
 
     modules = with config.flake.modules.homeManager; [
       alex
-    ] ++ [
-      inputs.xalaynix.modules.homeManager.xalaynix
-      inputs.xalaynixDesktop.modules.homeManager.xalaynixDesktop
     ];
   };
 
   flake.modules.homeManager.alex = {
-    inputs,
-    outputs,
-    lib,
-    config,
     pkgs,
     ...
   }: {
-    nixpkgs = {
-      config = {
-        allowUnfree = true;
-      };
-    };
+    imports = [
+      inputs.xalaynix.modules.homeManager.xalaynix
+    ];
 
     home = {
-      username = "defaultUser";
-      homeDirectory = "/home/defaultUser";
+      username = "alex";
+      homeDirectory = "/home/alex";
     };
-
-    # Enable home-manager to install and manage itself
-    programs.home-manager.enable = true;
 
     # Some example packages
     programs.firefox.enable = true;
     home.packages = with pkgs; [
       godot
     ];
-
-    # Nicely reload system units when changing configs
-    systemd.user.startServices = "sd-switch";
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
     home.stateVersion = "25.11";
