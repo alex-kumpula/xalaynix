@@ -33,6 +33,27 @@
     "dgop": {
       "inputs": {
         "nixpkgs": [
+          "xalaynix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1768856812,
+        "narHash": "sha256-s6iEuz/6JGZoa9Txsxyjlq1tR2lHarmLGBX8ptrTliU=",
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "rev": "0afebac7527826b8f565ed17343a7f11e00fa0dc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "type": "github"
+      }
+    },
+    "dgop_2": {
+      "inputs": {
+        "nixpkgs": [
           "xalaynixDesktop",
           "dms",
           "nixpkgs"
@@ -139,7 +160,7 @@
     },
     "dms_2": {
       "inputs": {
-        "dgop": "dgop",
+        "dgop": "dgop_2",
         "nixpkgs": [
           "xalaynixDesktop",
           "nixpkgs"
@@ -642,6 +663,7 @@
     },
     "xalaynix": {
       "inputs": {
+        "dgop": "dgop",
         "disko": "disko_3",
         "dms": "dms",
         "flake-file": "flake-file_3",
@@ -658,11 +680,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1769057977,
-        "narHash": "sha256-Lsd4Fw0s/8+41+iTVR4Th706n11Vp7WMuvsfbQrioQQ=",
+        "lastModified": 1769058022,
+        "narHash": "sha256-0Guyg1OK4Gk6oQDULPJOBcGZRis7bVI4h4F3fZE6f2I=",
         "owner": "alex-kumpula",
         "repo": "xalaynix-modules",
-        "rev": "bcee3765fab65a005b2d74a22f8724501e663c9f",
+        "rev": "b4fa65ef13e46683000260e88e08df4676e77280",
         "type": "github"
       },
       "original": {
