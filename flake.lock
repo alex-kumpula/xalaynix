@@ -658,11 +658,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1769055061,
-        "narHash": "sha256-9885fuqXwFkqonAfXeM64VvJwZ0QwNtpKeQEK5ChnsM=",
+        "lastModified": 1769055203,
+        "narHash": "sha256-Etvc7I/SxSldG17ZY9je9js7IRJTOxhlWVbL7rU7+PU=",
         "owner": "alex-kumpula",
         "repo": "xalaynix-modules",
-        "rev": "73604978bc2a54d952ced6083f90506c3f5dfd9a",
+        "rev": "cc9c57e6240715b6950666221a4fb8ee75dfbee4",
         "type": "github"
       },
       "original": {
