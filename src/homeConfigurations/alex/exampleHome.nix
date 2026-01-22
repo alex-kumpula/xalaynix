@@ -21,6 +21,11 @@
       homeDirectory = "/home/defaultUser";
     };
 
+    xalaynix = {
+      enable = true;
+      preset = "minimal";
+    };
+
     # Some example packages
     programs.firefox.enable = true;
     home.packages = with pkgs; [
