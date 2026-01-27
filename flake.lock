@@ -17,11 +17,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1769411372,
-        "narHash": "sha256-s2omEv4r7XAd19Pa1BrPfqY0fN9AHen7ozH+aGlIGts=",
+        "lastModified": 1769411596,
+        "narHash": "sha256-tJSPdhCpShD94943ikyKSpW28Hs+fLgC5gOR+nkxHK0=",
         "owner": "alex-kumpula",
         "repo": "nixos-cleanslate",
-        "rev": "c6ebcc7e35f2b23c15bac36ff447e1ed7f6c9659",
+        "rev": "eb7029ebfc3e683dc7ddb60867014c438f616de5",
         "type": "github"
       },
       "original": {
@@ -199,11 +199,11 @@
     },
     "flake-file_2": {
       "locked": {
-        "lastModified": 1769318604,
-        "narHash": "sha256-WiYZgy0AHz0HuKByS2ZSYh1BMZUQcpAjiclPLZNS6hQ=",
+        "lastModified": 1769416693,
+        "narHash": "sha256-pPNc9y+Vhgf5qw9Qvb+8L7iWedX7dQ/7oRH0QWzwJkg=",
         "owner": "vic",
         "repo": "flake-file",
-        "rev": "fa1846d84fdfa4ff2cc79c1e79eddef55959d14d",
+        "rev": "c09729628983ed1e35c8dd43aa3df91a06f80e65",
         "type": "github"
       },
       "original": {
@@ -523,11 +523,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1769089682,
-        "narHash": "sha256-9yA/LIuAVQq0lXelrZPjLuLVuZdm03p8tfmHhnDIkms=",
+        "lastModified": 1769318308,
+        "narHash": "sha256-Mjx6p96Pkefks3+aA+72lu1xVehb6mv2yTUUqmSet6Q=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "078d69f03934859a181e81ba987c2bb033eebfc5",
+        "rev": "1cd347bf3355fce6c64ab37d3967b4a2cb4b878c",
         "type": "github"
       },
       "original": {
