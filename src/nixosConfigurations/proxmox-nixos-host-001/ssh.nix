@@ -6,7 +6,7 @@
     services.openssh.enable = true;
     networking.firewall.allowedTCPPorts = [ 22 ];
 
-    users.users.defaultUser = {
+    users.users.main = {
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJSfkRaThtgy+4kZlQIIh7dDxHBy/F3QqufQBRqEvZcY"
       ];
