@@ -5,7 +5,7 @@
 
     virtualisation.docker = {
       # Consider disabling the system wide Docker daemon
-      enable = false;
+      enable = true;
 
       rootless = {
         enable = true;
@@ -17,7 +17,7 @@
         };
       };
     };
-    
+
   };
 }
 
