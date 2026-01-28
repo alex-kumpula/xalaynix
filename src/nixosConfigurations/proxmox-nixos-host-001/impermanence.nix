@@ -10,7 +10,12 @@
     environment.persistence."/persistent/system" = {
       enable = true;
       hideMounts = true;
-      directories = config.xalaynix.constants.commonPersistentDirectories;
+      directories = config.xalaynix.constants.commonPersistentDirectories ++ [
+        "var/lib/machines"  # Persist containers and VMs
+        "var/lib/libvirt"   # Persist libvirt data
+        "etc/libvirt"       # Persist libvirt config
+        "etc/ssh"           # Persist SSH config and keys
+      ];
       files = config.xalaynix.constants.commonPersistentFiles;
     };
 
