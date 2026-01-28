@@ -8,8 +8,8 @@
       description = "Main";
       initialPassword = "changeme";
       extraGroups = [ "networkmanager" "wheel" ];
-      subUidRanges = [ { startUid = 100000; size = 65536; } ]; # Allow user namespaces for containers (fix for rootless docker)
-      subGidRanges = [ { startGid = 100000; size = 65536; } ]; # Allow user namespaces for containers (fix for rootless docker)
+      subUidRanges = [ { startUid = 100000; count = 65536; } ]; # Allow user namespaces for containers (fix for rootless docker)
+      subGidRanges = [ { startGid = 100000; count = 65536; } ]; # Allow user namespaces for containers (fix for rootless docker)
       packages = with pkgs; [
       #  thunderbird
       ];
