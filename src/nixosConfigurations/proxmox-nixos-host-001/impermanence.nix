@@ -14,6 +14,8 @@
         "/var/lib/machines"  # Persist containers and VMs
         "/var/lib/libvirt"   # Persist libvirt data
         "/var/lib/docker"    # Persist docker data
+        "/var/lib/portables" # Persist portable services
+        "/var/lib/fail2ban"  # Persist fail2ban data
       ];
       files = config.xalaynix.constants.commonPersistentFiles ++ [
         "/etc/subuid"
