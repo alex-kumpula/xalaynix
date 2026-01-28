@@ -28,6 +28,7 @@
 
     # Some example packages
     programs.firefox.enable = true;
+    programs.lazydocker.enable = true;
     home.packages = with pkgs; [
       # godot
     ];
