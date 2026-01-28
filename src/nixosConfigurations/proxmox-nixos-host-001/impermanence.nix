@@ -14,7 +14,10 @@
         "/var/lib/machines"  # Persist containers and VMs
         "/var/lib/libvirt"   # Persist libvirt data
       ];
-      files = config.xalaynix.constants.commonPersistentFiles;
+      files = config.xalaynix.constants.commonPersistentFiles ++ [
+        "/etc/subuid"
+        "/etc/subgid"
+      ];
     };
 
     fileSystems."/persistent" = {
