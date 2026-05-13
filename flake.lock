@@ -17,11 +17,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1778649043,
-        "narHash": "sha256-0DHiZLz+w1a9jtqOg9OuHx3AFLOS7Cr/9Wqox1haiOM=",
+        "lastModified": 1778651586,
+        "narHash": "sha256-GEMwWEcPSxj5PJNCkfRW253N2z+s6o5P7yeO6SiBEjM=",
         "owner": "alex-kumpula",
         "repo": "nixos-cleanslate",
-        "rev": "8942201459b2897d39bf4828b2d1f708e8ae4b55",
+        "rev": "0f0fe159a737e3583934907c6e76baff1039a279",
         "type": "github"
       },
       "original": {
