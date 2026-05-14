@@ -960,11 +960,11 @@
         "xalaynix-wrappers": "xalaynix-wrappers"
       },
       "locked": {
-        "lastModified": 1778744284,
-        "narHash": "sha256-Mfhfbcz9mgZdvSVXgOJ34pl11fAftyaLWWdt7+kREW4=",
+        "lastModified": 1778744396,
+        "narHash": "sha256-uWnI+qWNt0F0E+BYrGZOEpHZHj1xzf0kgsQqx0XZCD4=",
         "owner": "alex-kumpula",
         "repo": "xalaynix-modules",
-        "rev": "84d5da04dda75ae883a7d1b9fd9066dbeb7a3f44",
+        "rev": "16c90e4dfbd1259701d8e3574e5b6e7919fded12",
         "type": "github"
       },
       "original": {
@@ -992,11 +992,11 @@
         "wrapper-modules": "wrapper-modules"
       },
       "locked": {
-        "lastModified": 1778744272,
-        "narHash": "sha256-hMR3nBpXbud9N10AKBPVIxYcaYmRvPyzy/k5NWTLnSY=",
+        "lastModified": 1778744389,
+        "narHash": "sha256-CsBRudep7+nzemz7NMqUpSFrtxQc3B4uyvXjFMrIt+k=",
         "owner": "alex-kumpula",
         "repo": "xalaynix-wrappers",
-        "rev": "3f91ad0c7b592ad98a41d1c017b99f929dca42dd",
+        "rev": "60bea799158a4397699e5c19782a7c7681d07932",
         "type": "github"
       },
       "original": {
